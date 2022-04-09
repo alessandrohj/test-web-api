@@ -1,8 +1,8 @@
-const {data} = require('../data/data.js')
+const {notes} = require('../data/data.js')
 
 function validateId (req, res, next){
-    const id = parseInt(req.params.id)
-    const index = data.findIndex(note => note.id === id)
+    const id = parseInt(req.params.noteId)
+    const index = notes.findIndex(note => note.id === id)
     if (index < 0) {
       res.status(404).send({
         errors: [

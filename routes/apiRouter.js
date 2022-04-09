@@ -1,12 +1,15 @@
 const express = require('express')
-const data = require('../data/data.js');
+const {notes} = require('../data/data.js');
 const validateNoteId = require('../middleware/validateId')
 const router = express.Router()
 
-router.use('/noteId', validateNoteId)
+router.use('/notes/:noteId', validateNoteId)
 
-router.get('/', (req, res) => res.send({data: data}))
+router.get('/notes/', (req, res) => res.send({data: notes}))
 
+router.get('/notes/:noteId', (req, res) => {
+    res.send({data: notes[req.noteIndex]})  
+})
 
 
 module.exports = router

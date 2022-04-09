@@ -1,4 +1,4 @@
-const data = [
+const notes = [
     {
         "id": 0,
         "title": "Note to self",
@@ -8,4 +8,4 @@ const data = [
 ]
 
 
-module.exports = {data}
+module.exports = {notes}
