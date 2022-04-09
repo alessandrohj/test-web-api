@@ -17,8 +17,7 @@ router.get('/notes/:noteId', (req, res) => {
 })
 
 router.post('/notes', jsonParser, sanitizeBody, (req, res) => {
-    let tempNote = req.sanitizedBody
-    const {title, description} = tempNote
+    const {title, description} =  req.sanitizedBody
     const newNote = {
         id: nanoid(),
         title,
